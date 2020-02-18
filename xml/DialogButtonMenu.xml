@@ -17,16 +17,24 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList</include>
 				<content>
+<!--				
+
+					<item>
+						<label>Reload Skin</label>
+						<onclick>ReloadSkin()</onclick>
+						<visible>System.CanPowerDown</visible>
+					</item>
+-->					
 					<item>
 						<label>$LOCALIZE[13012]</label>
 						<onclick>Quit()</onclick>
 						<visible>System.ShowExitButton</visible>
 					</item>
 					<item>
-						<label>Reload Skin</label>
-						<onclick>ReloadSkin()</onclick>
+						<label>$LOCALIZE[13016]</label>
+						<onclick>Powerdown()</onclick>
 						<visible>System.CanPowerDown</visible>
-					</item>
+					</item>					
 					<item>
 						<label>$LOCALIZE[20150]</label>
 						<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>

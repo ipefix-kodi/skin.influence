@@ -3,13 +3,14 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
 		<control type="group">
-			<include>DefaultBackground</include>
+			<include>DefaultBackground</include>	
 			<control type="image">
 				<left>-100</left>
 				<top>0</top>
 				<width>3000</width>
-				<height>HeightTop</height>
-				<texture border="0,6,0,6">new/Back20.png</texture>
+				<height>HeightTop</height>	
+				<texture border="0,6,0,6">new/Back20.png</texture>		
+				<visible>Control.HasFocus(9000)</visible>	
 			</control>	
 			<control type="image">
 				<left>-100</left>
@@ -17,23 +18,32 @@
 				<width>3000</width>
 				<height>HeightRibon</height>
 				<texture border="0,6,0,6">new/Back10.png</texture>
-			</control>		
+			</control>	
 			<control type="image">
 				<left>-100</left>
 				<top>450</top>
 				<width>3000</width>
-				<height>HeightDown</height>
+				<height>HeightDown</height>		
 				<texture border="0,6,0,6">new/Back40.png</texture>
-				<visible>Control.HasFocus(9000)</visible>	
+				<visible>Control.HasFocus(9000) | Control.HasFocus(804) | Control.HasFocus(803) | Control.HasFocus(802) | Control.HasFocus(801)</visible>	
 			</control>
 			<control type="image">
 				<left>-100</left>
 				<top>0</top>
 				<width>3000</width>
-				<height>450</height>
+				<height>HeightTop</height>
 				<texture border="0,6,0,6">new/Back40.png</texture>
-				<visible>!Control.HasFocus(9000)</visible>	
-			</control>			
+				<visible>!(Control.HasFocus(9000) | Control.HasFocus(804) | Control.HasFocus(803) | Control.HasFocus(802) | Control.HasFocus(801)) </visible>	
+			</control>
+			<control type="image">
+				<left>-100</left>
+				<top>HeightTop</top>
+				<width>3000</width>
+				<height>HeightRibon</height>
+				<texture border="0,6,0,6">new/Back40.png</texture>
+				<visible>!Control.HasFocus(9000) </visible>	
+			</control>	
+
 			<include>Clock</include>
 			<control type="image">
 				<description>LOGO</description>
@@ -43,18 +53,56 @@
 				<height>98</height>
 				<aspectratio aligny="top" align="left">keep</aspectratio>
 				<texture>new/kodi-logo.png</texture>
-			</control>		
+			</control>	
 		</control>
 		<control type="group">
 			<depth>DepthMenu</depth>
 			<top>0</top>
+			<control type="grouplist" id="720">
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+				<right>750</right	>
+				<width>480</width>
+				<height>110</height>
+				<top>-10</top>
+				<onup>9000</onup>
+				<ondown>9000</ondown>		
+				<onright>2000</onright>
+				<align>justify</align>
+				<include content="IconButton">
+					<param name="control_id" value="804" />
+					<param name="onclick" value="ActivateWindow(shutdownmenu)" />
+					<param name="icon" value="icons/power.png" />
+					<param name="label" value="$LOCALIZE[33060]" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="802" />
+					<param name="onclick" value="ActivateWindow(settings)" />
+					<param name="icon" value="icons/settings.png" />
+					<param name="label" value="$LOCALIZE[21417]" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="801" />
+					<param name="onclick" value="ActivateWindow(1107)" />
+					<param name="icon" value="icons/search.png" />
+					<param name="label" value="$LOCALIZE[137]" />
+				</include>
+				<include content="IconButton">
+					<param name="control_id" value="803" />
+					<param name="onclick" value="Fullscreen" />
+					<param name="icon" value="icons/now-playing/fullscreen.png" />
+					<param name="label" value="$LOCALIZE[31000]" />
+					<param name="visible" value="Player.HasMedia" />
+				</include>
+			</control>	
 			<control type="fixedlist" id="9000">
 				<left>-110</left>
-				<top>0</top>
+				<top>HeightTop</top>
 				<width>3000</width>
 				<height>450</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
+				<onup>720</onup>
 				<ondown>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</ondown>		
 				<pagecontrol/>
 				<scrolltime>300</scrolltime>
@@ -64,7 +112,7 @@
 				<itemlayout height="HeightRibon" width="200">	
 					<control type="image">
 						<left>0</left>
-						<top>HeightTop</top>
+						<top>0</top>
 						<width>200</width>
 						<height>200</height>
 						<texture>$INFO[ListItem.Art(thumb)]</texture>
@@ -73,7 +121,7 @@
 					</control>
 					<control type="label">
 						<left>0</left>
-						<top>320</top>
+						<top>120</top>
 						<width>200</width>
 						<height>120</height>
 						<font>font25</font>
@@ -88,7 +136,7 @@
 				<focusedlayout height="HeightRibon" width="200">
 					<control type="image">
 						<left>0</left>
-						<top>HeightTop</top>
+						<top>0</top>
 						<width>200</width>
 						<height>HeightRibon</height>
 						<texture colordiffuse="button_focus">lists/focus.png</texture>
@@ -98,7 +146,7 @@
 					</control>					
 					<control type="image">
 						<left>0</left>
-						<top>HeightTop</top>
+						<top>0</top>
 						<width>200</width>
 						<height>200</height>
 						<texture>$INFO[ListItem.Art(thumb)]</texture>
@@ -108,7 +156,7 @@
 					</control>			
 					<control type="label">
 						<left>0</left>
-						<top>320</top>
+						<top>120</top>
 						<width>200</width>
 						<height>120</height>
 						<font>font25</font>
@@ -123,7 +171,7 @@
 					<item>
 						<label>$LOCALIZE[342]</label>
 						<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
-						<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+						<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(10025,&quot;library://video/movies/&quot;,return)</onclick>
 						<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
 						<property name="menu_id">$NUMBER[5000]</property>
 						<thumb>new/icons/movies.png</thumb>
@@ -133,7 +181,7 @@
 					<item>
 						<label>$LOCALIZE[20343]</label>
 						<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-						<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+						<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(10025,&quot;library://video/movies/&quot;,return)</onclick>
 						<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
 						<property name="menu_id">$NUMBER[6000]</property>
 						<thumb>new/icons/tv.png</thumb>
@@ -229,14 +277,7 @@
 						<property name="id">weather</property>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
 					</item>
-					<item>
-						<label>Manage</label>
-						<thumb>new/icons/manage.png</thumb>																																															
-						<onclick>ActivateWindow(Settings)</onclick>
-						<icon/>
-						<thumb/>
-						<visible>[!Skin.HasSetting(HomeMenuNoSystemButton) + !System.IsMaster] | System.IsMaster</visible>
-					</item>					
+	
 				</content>
 			</control>
 		</control>
