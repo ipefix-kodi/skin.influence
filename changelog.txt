@@ -1,2 +1,4 @@
 ﻿[B]0.0.1[/B]
 • Initial commit 
+[B]0.0.04[/B]
+• Add the power button on home 

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <addons>
-	<addon id="skin.Influence" name="Influence (Leia)" provider-name="Ipefix" version="0.0.01">
+	<addon id="skin.Influence" name="Influence (Leia)" provider-name="Ipefix" version="0.0.04">
 		<requires>
 			<import addon="xbmc.gui" version="5.12.0" />
 		</requires>

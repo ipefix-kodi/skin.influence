@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.Influence" version="0.0.01" name="Influence" provider-name="Ipefix">
+<addon id="skin.Influence" version="0.0.04" name="Influence" provider-name="Ipefix">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0"/>
 	</requires>
