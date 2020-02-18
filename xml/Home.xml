@@ -782,10 +782,10 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<onleft>9000</onleft>
-					<onright>9000</onright>
-					<onup>14100</onup>
-					<ondown>14100</ondown>
+					<onleft>14100</onleft>
+					<onright>14100</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
 					<preloaditems>2</preloaditems>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>vertical</orientation>
@@ -993,6 +993,7 @@
 					</include>
 				</control>
 -->				
+
 				<include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
 					<param name="text_label" value="$LOCALIZE[31104]" />
 					<param name="button_label" value="$LOCALIZE[31110]" />
