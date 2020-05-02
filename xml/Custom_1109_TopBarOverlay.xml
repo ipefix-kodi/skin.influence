@@ -35,6 +35,7 @@
 				<aligny>center</aligny>
 				<visible>!String.IsEmpty(Player.Art(tvshow.clearlogo))</visible>
 			</control>
+<!--	 Suppression OSD ligne du haut		
 			<control type="group">
 				<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide)</visible>
 				<visible>String.IsEmpty(Player.Art(clearlogo))</visible>
@@ -59,7 +60,7 @@
 					<left>0</left>
 					<right>0</right>
 				</control>
-			</control>
+			</control>					
 			<control type="group">
 				<visible>!Window.IsVisible(extendedprogressdialog)</visible>
 				<animation effect="fade" time="150">VisibleChange</animation>
@@ -109,6 +110,7 @@
 					</control>
 				</control>
 			</control>
+-->		
 		</control>
 	</controls>
 </window>

@@ -17,13 +17,14 @@
 			<control type="panel" id="9000">
 				<include>ButtonMenuList</include>
 				<content>
-<!--				
+				
 
 					<item>
 						<label>Reload Skin</label>
 						<onclick>ReloadSkin()</onclick>
 						<visible>System.CanPowerDown</visible>
 					</item>
+<!--							
 -->					
 					<item>
 						<label>$LOCALIZE[13012]</label>

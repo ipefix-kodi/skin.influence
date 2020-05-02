@@ -533,7 +533,9 @@
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 			</control>
 			<include content="InfoDialogTopBarInfo">
+			<!--
 				<param name="main_label" value="$VAR[VideoInfoMainLabelVar]" />
+			-->
 				<param name="sub_label" value="$VAR[VideoInfoSubLabelVar]" />
 			</include>
 		</control>

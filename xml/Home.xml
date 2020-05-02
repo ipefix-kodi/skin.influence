@@ -181,7 +181,7 @@
 					<item>
 						<label>$LOCALIZE[20343]</label>
 						<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
-						<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(10025,&quot;library://video/movies/&quot;,return)</onclick>
+						<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(10025,&quot;library://video/tvshows/&quot;,return)</onclick>
 						<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
 						<property name="menu_id">$NUMBER[6000]</property>
 						<thumb>new/icons/tv.png</thumb>
@@ -277,7 +277,6 @@
 						<property name="id">weather</property>
 						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
 					</item>
-	
 				</content>
 			</control>
 		</control>
